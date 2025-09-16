@@ -1,0 +1,18 @@
+﻿@page "/power"
+@rendermode InteractiveServer
+<h3>Power</h3>
+<input type="number" name="digit" min="0" max="20" @bind="digit"@onclick=""/>
+<input type="number" name="power" min="0" max="20" @bind="power"/>
+<button></button>
+<label for="power" style="font-size:24px;"> </label>
+
+@code {
+    void Pow()
+    {
+        long digit = 1;
+        long power = 1;
+
+        Math.Pow(digit, power);
+        
+    }
+}
