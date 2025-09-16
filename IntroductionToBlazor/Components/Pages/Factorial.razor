@@ -5,16 +5,16 @@
 
 <input type="number" name="factorial" min="0" max="20" @bind="n" @onclick ="Calculate"/><label for="factorial" style="font-size:24px;">! = @factorial</label>
 
-@code {
+@* @code {
     int n = 0;
     long factorial = 1;
     void Calculate()
     {
         factorial = 1;
-        for(long i=1; i<=n; i++)
+        for (long i = 1; i <= n; i++)
         {
             factorial *= i;
         }
         // return factorial;
     }
-}
+} *@
