@@ -2,23 +2,24 @@
 @rendermode InteractiveServer
 
 <h3>Febonacci</h3>
-<label for="Feb"></label>
+
+<input type="number" name="digit"min="0" @bind="digit" @onclick="Calc" />
+<label>=</label>
+<label> 
+    @string.Join(" ", series)
+</label>
 
 @code {
-    
-    // for (int i=1; i < 20; i++)
-    //  {
-    //      Feb(i);
-    //  }
-    
-    
-    // static long Feb(int n)
-    // {
-    //     if (n < 3)
-    //         return 1;
-    //     else
-    //         return Feb(n - 2) + Feb(n - 1);
-    // }
+    decimal digit = 1;
+    List<decimal> series = new List<decimal> { 1, 2 };
 
+    void Calc()
+    {
+        for (int i = series.Count; i<=digit;i++)
+        {
+            series.Add(series[i - 1] + series[i - 2]);
+        }
+    }
+    
      
 }
