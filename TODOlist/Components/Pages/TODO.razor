@@ -10,7 +10,7 @@
 <button @onclick="AddTask">Добавить</button>
 <span class="complete-task">Complete task</span>
 
-<ul>
+@* <ul>
     @foreach(TODOitem i in tasks)
     {
         <li>
@@ -18,7 +18,34 @@
             <span class=@(i.DONE?"complete-task":"")> @i.Title</span>
         </li>        
     }
-</ul>
+</ul> *@
+<div class="box">
+    <div class="todo">
+        <h1 style="font-size:50px">TODO</h1>
+        <ul>
+            @foreach (TODOitem i in tasks.Where(task => !task.DONE))
+            {
+                <li>
+                    <input type="checkbox" @bind="i.DONE" />
+                    <span> @i.Title</span>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="done">
+        <h1 style="font-size:50px">DONE</h1>
+        <ul>
+            @foreach (TODOitem i in tasks.Where(task => task.DONE))
+            {
+                <li>
+                    <input type="checkbox" @bind="i.DONE" />
+                    <span> @i.Title</span>
+                </li>
+            }
+        </ul>
+    </div>
+
+</div>
 
 @code {
     private List<TODOitem> tasks = [];

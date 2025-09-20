@@ -1,8 +1,39 @@
-﻿ul {
+﻿ul 
+{
     list-style:none;
 }
 .complete-task
 {
     text-decoration:line-through;
     color:grey;
+}
+.box
+{
+    display: flex;
+    margin:unset;
+    justify-content: space-between;
+    /*flex-flow: column;*/
+    flex-flow: wrap;
+}
+.todo ul
+{
+    width:500px;
+    height:500px;
+    font-size:30px;
+    border: solid 5px;
+    margin-block: auto;
+   
+    border-radius: unset;
+    color: red;
+}
+.done ul
+{
+    width: 500px;
+    height: 500px;
+    font-size: 30px;
+    text-decoration: line-through;
+    border: solid 5px;
+    border-radius: revert-layer;
+    /*margin-block: revert;*/
+    color: forestgreen;
 }
