@@ -1,11 +1,11 @@
-﻿using BlazorAcademy.Components;
+﻿using BlazorAcademy2.Components;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using BlazorAcademy.Data;
+using BlazorAcademy2.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContextFactory<BlazorAcademyContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("BlazorAcademyContext") ?? throw new InvalidOperationException("Connection string 'BlazorAcademyContext' not found.")));
+builder.Services.AddDbContextFactory<BlazorAcademy2Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BlazorAcademy2Context") ?? throw new InvalidOperationException("Connection string 'BlazorAcademy2Context' not found.")));
 
 builder.Services.AddQuickGridEntityFrameworkAdapter();
 
